@@ -1,0 +1,254 @@
+/* ====================================================================================================== */
+/* SHOP PAGE STYLESHEET */
+/* ====================================================================================================== */
+
+/* ======================= */
+/* GLOBAL LAYOUT */
+/* ======================= */
+main {
+    margin-left: 5vw;
+}
+
+main div:nth-of-type(3) {
+    margin-right: 5vw;
+}
+
+main div:nth-of-type(2) {
+    max-width: 84.337vw;
+}
+
+/* ======================= */
+/* GLOBAL TEXT STYLING */
+/* ======================= */
+h4 {
+    font-size: calc(1.2944983819vw + 1.4em);
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+main p {
+    font-size: calc(0.3883495146vw + 0.95em);
+    color: var(--shop-p-color);
+    font-family: HelveticaNeueRoman;
+    text-align: left;
+    line-height: 1.6em;
+}
+
+main a:hover {
+    background: none;
+}
+
+/* ====================================================================================================== */
+/* IMAGE AND HEADING STYLING */
+/* ====================================================================================================== */
+
+/* ======================= */
+/* MAIN HEADER IMAGE */
+/* ======================= */
+main > div:first-child {
+    display: grid;
+    width: 100%;
+    height: 35vh;
+    margin-right: 0;
+    margin-bottom: 6em;
+}
+
+main > div:first-child img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+/* ======================= */
+/* HEADING TEXT */
+/* ======================= */
+main > div:first-child h3 {
+    text-align: left;
+    grid-row: 1;
+    grid-column: 1;
+    align-self: end; 
+    justify-self: start; 
+    background-color: var(--white);
+    padding: 5vh 20vw 0 0;
+    margin-right: 3vw;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: calc(3.1067961165vw + 1.25em);
+    z-index: 1; 
+    font-weight: 100;
+}
+
+/* ====================================================================================================== */
+/* INTRO TEXT DIV */
+/* ====================================================================================================== */
+
+/* ======================= */
+/* INTRO TEXT LAYOUT */
+/* ======================= */
+main > div:nth-of-type(2) {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    margin-top: 1em;
+}
+
+/* ======================= */
+/* DIVIDER SVG */
+/* ======================= */
+main > div:nth-of-type(2) > svg {
+    fill: var(--button-color);
+    width: 2em;
+    height: auto;
+    stroke: none;
+}
+
+/* ======================= */
+/* HEADING & PARAGRAPH */
+/* ======================= */
+main > div:nth-of-type(2) h4 {
+    margin: 0.5em 0 0.75em 0em;
+}
+
+main > div:nth-of-type(2) p {
+    text-align: center;
+    font-size: calc(0.3883495146vw + 1em);
+}
+
+/* ====================================================================================================== */
+/* LONG ARTICLE DIV */
+/* ====================================================================================================== */
+
+/* ======================= */
+/* ARTICLE CONTAINER */
+/* ======================= */
+main > div:nth-of-type(3) {
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr)); 
+    gap: 2em; 
+    text-align: left;
+    margin-bottom: 3em;
+}
+
+/* ======================= */
+/* ARTICLE STYLING */
+/* ======================= */
+article div {
+    display: grid;
+    grid-template-rows: auto auto auto auto; 
+    gap: 1em; 
+    text-align: left; 
+}
+
+/* ARTICLE IMAGE */
+article img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+}
+
+/* ARTICLE HEADING */
+article div h4 {
+    margin: 0;
+}
+
+/* ARTICLE LINK */
+main div article div > a {
+    display: flex;
+    align-items: center;
+    font-size: calc(0.2588996764vw + 0.99em);
+    font-weight: 500;
+    gap: 0.3em;
+    color: var(--third-color);
+    background: none;
+    transition: transform 0.3s ease;
+}
+
+main div article a svg {
+    stroke-width: 0.1em;
+    width: 1.5em; 
+    height: 1.5em; 
+}
+
+main div article a:hover svg {
+    transform: translate(0.3em, -0.2em);
+}
+
+main div article:nth-of-type(4) > div > div a {
+    text-transform: none;
+    font-weight: 1;
+    font-size: 0.95em;
+    background: none;
+    color: var(--third-color);
+}
+
+/* ====================================================================================================== */
+/* RESPONSIVE STYLING */
+/* ====================================================================================================== */
+
+/* ======================= */
+/* TABLET AND SMALL SCREENS */
+/* ======================= */
+@media (min-width: 730px) {
+
+    main > div:nth-of-type(1) {
+        margin-bottom: 10em;
+    }
+
+    main > div:nth-of-type(2) {
+        margin: 0 auto; /* Center the grid container horizontally */
+        max-width: 920px; /* Limit the container's maximum width */
+        margin-bottom: 5em;
+    }
+
+    main > div:nth-of-type(3) {
+        grid-template-columns: 1fr; /* Articles still stack */
+        gap: 5em;
+    }
+
+    article {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+        align-items: center; /* Align content vertically */
+        gap: 1em; /* Add space between columns */
+    }
+
+    article:nth-of-type(even) {
+        grid-template-areas: 
+            "image content";
+    }
+
+    article:nth-of-type(odd) {
+        grid-template-areas: 
+            "content image";
+    }
+
+    article img {
+        grid-area: image;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    article > div {
+        display: grid;
+        grid-area: content;
+        gap: 1em;
+    }
+}
+
+/* ======================= */
+/* LARGE SCREENS */
+/* ======================= */
+@media (min-width: 1150px) {
+    main > div:first-child h3 {
+        padding-right: 2em;
+        margin-right: 100%;
+    }
+
+    main > div:first-child {
+        height: 50vh;
+    }
+}

@@ -1,0 +1,592 @@
+/* ====================================================================================================== */
+/* MAIN PAGE STYLESHEET */
+/* ====================================================================================================== */
+
+header {
+  margin-bottom: 2em;
+}
+
+/* ======================= */
+/* GLOBAL SETTINGS */
+/* ======================= */
+
+main div:nth-of-type(1) ul,
+div:nth-of-type(3) ul,
+div:nth-of-type(4) ul {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  scroll-snap-type: x mandatory; /* Enable snapping for smooth scrolling */
+  scrollbar-width: none; /* Hide scrollbar for a cleaner look */
+}
+
+h4 {
+  font-family: SuperMolotBold;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.75em;
+  color: var(--secondary-color);
+}
+
+/* ======================= */
+/* CAROUSEL ITEMS */
+/* ======================= */
+
+main div:nth-of-type(1) {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "content"
+    "navigation";
+}
+
+main div:nth-of-type(1) ul {
+  grid-area: content;
+}
+
+main div:nth-of-type(1) ul li {
+  scroll-snap-align: center;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+}
+
+/* ======================= */
+/* IMAGES */
+/* ======================= */
+
+main div:nth-of-type(1) ul li img {
+  width: 100vw;
+  height: 16.5em;
+  display: grid;
+  object-fit: cover;
+  object-position: center;
+}
+
+main div:nth-of-type(1) ul li h3 {
+  margin-bottom: -5em;
+  text-align: center;
+  z-index: 1;
+  color: var(--white);
+  font-family: HelveticaNeueBold;
+  font-size: 1.9em;
+  font-weight: 1;
+  text-transform: uppercase;
+}
+
+/* ======================= */
+/* LINKS */
+/* ======================= */
+
+main div:nth-of-type(1) ul li a {
+  padding: 0.5em 1.6em;
+  margin-top: -4em;
+  text-align: center;
+  grid-row: 3;
+  z-index: 1;
+}
+
+/* ======================= */
+/* BUTTONS */
+/* ======================= */
+
+main div:nth-of-type(1) nav {
+  grid-area: navigation;
+}
+
+main nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.6em;
+}
+
+main nav button {
+  width: 0.8em;
+  height: 0.8em;
+  border: none;
+  border-radius: 50%;
+  background: var(--inactive-button);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+main nav button.active {
+  background: var(--button-color);
+}
+
+/* ====================================================================================================== */
+/* UL 2 LINK BLOCKS */
+/* ====================================================================================================== */
+
+main div:nth-of-type(2) ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  padding: 0;
+  margin: 0 1em 2.5em 1em;
+}
+
+/* ======================= */
+/* GRID ITEMS */
+/* ======================= */
+
+main div:nth-of-type(2) ul li {
+  display: flex;
+  background: var(--white);
+  box-shadow: 0 4px 4px 0 var(--shadow-color);
+  padding: 1.7em 0.75em;
+}
+
+/* ======================= */
+/* LINKS */
+/* ======================= */
+
+main div:nth-of-type(2) ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--secondary-color);
+  background-color: var(--white);
+  font-size: 1em;
+  font-weight: 400;
+  width: 100%;
+}
+
+/* ====================================================================================================== */
+/* UL 3 LONG MAIN CAROUSEL */
+/* ====================================================================================================== */
+
+main div:nth-of-type(3) {
+  display: grid;
+  grid-template-rows: auto auto; /* Rows for carousel and navigation */
+  grid-template-areas:
+    "carousel"
+    "nav";
+  background-color: var(--secondary-color);
+  padding: 2em 0.5em 1.5em 0.5em;
+}
+
+/* ======================= */
+/* CAROUSEL SETTINGS */
+/* ======================= */
+
+main div:nth-of-type(3) ul {
+  grid-area: carousel;
+  gap: 1em;
+  background-color: var(--secondary-color);
+  margin: 0;
+  list-style: none;
+}
+
+main div:nth-of-type(3) ul li {
+  flex: 0 0 auto;
+  background-color: var(--white);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  width: 20em;
+  height: 24em;
+}
+
+/* ======================= */
+/* IMAGE AND TEXT */
+/* ======================= */
+
+main div:nth-of-type(3) ul li img {
+  width: 100%;
+  height: 12em;
+  object-fit: cover;
+}
+
+main div:nth-of-type(3) ul h4 {
+  margin: 0;
+  line-height: 1em;
+}
+
+main div:nth-of-type(3) ul p {
+  line-height: 0.9em;
+  font-weight: 1;
+  font-family: helvetica;
+  font-size: 1.3em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+main div:nth-of-type(3) ul a {
+  padding: 0.75em 1.25em;
+  border-radius: 0.5em;
+  font-size: 0.9em;
+  margin-top: 0;
+}
+
+/* ======================= */
+/* NAVIGATION BUTTONS */
+/* ======================= */
+
+main div:nth-of-type(3) nav {
+  grid-area: nav;
+  margin-top: 2em;
+}
+
+main div:nth-of-type(3) nav button {
+  height: 1em;
+  width: 1em;
+}
+
+/* ====================================================================================================== */
+/* ARTICLES */
+/* ====================================================================================================== */
+
+main article {
+  display: flex;
+  flex: 0 0 auto;
+  background-color: var(--article-background);
+  flex-direction: column;
+  align-items: center;
+  margin: 3em 1.5em 2em 1.5em;
+}
+
+/* ======================= */
+/* IMAGE, TEXT, AND LINKS */
+/* ======================= */
+
+main article img {
+  width: 100%;
+  object-fit: cover;
+}
+
+main article h4 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+main article p {
+  padding: 0 2em;
+  font-size: 1.25em;
+  line-height: 1.6em;
+}
+
+main article a {
+  justify-self: center;
+  padding: 0.9em 1em;
+  font-size: 1.25em;
+  margin: 1.5em 0.5em;
+}
+
+/* ====================================================================================================== */
+/* OOK INTERESSANT UL 4 */
+/* ====================================================================================================== */
+
+main div:nth-of-type(4) {
+  margin-top: 3em;
+  display: grid;
+  grid-template-rows: min-content 1fr auto;
+  grid-template-areas:
+    "header"
+    "content";
+  background-color: var(--secondary-color);
+  padding-bottom: 3.5em;
+}
+
+/* ======================= */
+/* H5 AND CONTENT SETTINGS */
+/* ======================= */
+
+h5 {
+  font-family: SuperMolotBold;
+  margin-left: 0.5em;
+  font-size: 2.25em;
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 1;
+}
+
+main div:nth-of-type(4) h5 {
+  grid-area: header;
+  margin: 1em 0 1em 0.5em;
+  justify-self: start;
+}
+
+
+/* ======================= */
+/* CONTENT SETTINGS */
+/* ======================= */
+
+main div:nth-of-type(4) ul {
+  grid-area: content;
+  display: flex;
+  gap: 1em;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  margin: 0;
+  padding-left: 1em;
+}
+
+main div:nth-of-type(4) ul li {
+  flex: 0 0 auto;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  scroll-snap-align: start;
+  scroll-margin-left: 1em;
+  height: 30em;
+  width: 19em;
+}
+
+/* ======================= */
+/* IMAGE AND TEXT INSIDE LIST ITEMS */
+/* ======================= */
+
+main div:nth-of-type(4) ul li img {
+  width: 100%;
+  object-fit: cover;
+}
+
+main div:nth-of-type(4) ul li p {
+  margin: 0;
+  font-size: 1.25em;
+  line-height: 1em;
+  text-align: center;
+  padding: 0 1.5em;
+  color: var(--secondary-color);
+}
+
+/* ======================= */
+/* LINKS INSIDE LIST ITEMS */
+/* ======================= */
+
+main div:nth-of-type(4) ul li a {
+  display: flex;
+  font-family: SuperMolotBold;
+  font-weight: 1;
+  margin-top: 0;
+  padding: 0;
+  align-items: center;
+  font-size: 1.15em;
+  gap: 0.3em;
+  color: var(--third-color);
+  background-color: var(--none);
+  transition: transform 0.3s ease;
+}
+
+main div:nth-of-type(4) svg {
+  stroke-width: 0.12em;
+  width: 1.9em;
+  height: 1.9em;
+}
+
+main div:nth-of-type(4) ul li a:hover svg {
+  transform: translate(0.3em, -0.2em);
+}
+
+/* ====================================================================================================== */
+/* DESKTOP DESIGN */
+/* ====================================================================================================== */
+
+@media (min-width: 1024px) {
+  .mobile-hidden {
+    display: grid;
+  }
+
+  .desktop-hidden {
+    display: none !important;
+    position: relative;
+  }
+
+  /* ======================= */
+  /* MAIN IMAGE CAROUSEL SETTINGS */
+  /* ======================= */
+
+  main div:nth-of-type(1) ul {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Left column is larger, right column is smaller */
+    grid-template-rows: 1fr 1fr; /* Two rows for the smaller items */
+    padding: 0em 3em 0em 3em;
+    margin-right: 1em;
+    align-items: start;
+  }
+
+  main div:nth-of-type(1) ul li:nth-of-type(1) {
+    grid-column: 1 / 2; /* Occupies the left column */
+    grid-row: 1 / 3; /* Spans both rows */
+    display: grid;
+    margin-right: 0.5em;
+    box-shadow: 0 0.25em 0.25em 0 var(--shadow-color);
+  }
+
+  main div:nth-of-type(1) ul li:nth-of-type(2) {
+    grid-column: 2 / 3; /* First item in the right column */
+    grid-row: 1 / 2;
+  }
+
+  main div:nth-of-type(1) ul li:nth-of-type(3) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    margin-top: 0.6em;
+  }
+
+  main div:nth-of-type(1) ul li h3 {
+    padding: 0 3em 0 3em;
+  }
+
+  /* ======================= */
+  /* IMAGE CORRECT SIZING */
+  /* ======================= */
+
+  main div:nth-of-type(1) ul li img {
+    width: 29.467vw;
+    height: 28.693vh;
+    max-width: 27.62em;
+    max-height: 16.87em;
+  }
+
+  main div:nth-of-type(1) ul li:nth-of-type(1) img {
+    width: 60.6vw;
+    height: 59.936vh;
+    max-width: 56.8em;
+    max-height: 35.25em;
+  }
+
+  /* Ski dorp button */
+  main div:nth-of-type(1) ul li:nth-of-type(1) a {
+    margin-top: -6em;
+    font-size: 1.25em;
+    padding: 1.1em 1.6em;
+    border-radius: 0.4em;
+  }
+
+  /* ======================= */
+  /* MAIN UL LINK BLOCKS */
+  /* ======================= */
+
+  main div:nth-of-type(2) {
+    display: grid;
+    justify-content: center;
+  }
+
+  main div:nth-of-type(2) h4 {
+    font-size: 2em;
+  }
+
+  main div:nth-of-type(2) ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+    margin: 0 0 4em 0; /* Center horizontally */
+    max-width: 1500px;
+  }
+
+  /* ======================= */
+  /* GRID ITEMS */
+  /* ======================= */
+
+  main div:nth-of-type(2) ul li {
+    display: flex;
+    background: var(--white);
+    box-shadow: 0 4px 4px 0 var(--shadow-color);
+    padding: 0.5em 0.5em;
+  }
+
+  main div:nth-of-type(2) ul li a {
+    font-size: 1.25em;
+  }
+
+  main div:nth-of-type(2) ul li svg {
+    height: 3em;
+    width: auto;
+  }
+
+  /* ======================= */
+  /* LONG CAROUSEL UL 3 */
+  /* ======================= */
+
+  main > div:nth-of-type(3) {
+    padding-right: 2em;
+    justify-content: center;
+    padding-bottom: 2em;
+  }
+
+  main div:nth-of-type(3) > nav > button {
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  main div:nth-of-type(3) > ul > li {
+    scroll-margin-left: 2em;
+  }
+
+  /* ======================= */
+  /* ARTICLES */
+  /* ======================= */
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  main article {
+    display: flex;
+    flex: 0 0 auto;
+    background-color: var(--article-background);
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0em;
+    gap: 1em;
+  }
+
+  main article h4 {
+    margin: 0;
+  }
+
+  main article a {
+    padding: 1.2em 1.4em;
+    margin: 0;
+  }
+
+  main article:nth-of-type(2) a {
+    margin-bottom: 1em;
+  }
+
+  /* ======================= */
+  /* OOK INTERESSANT UL 4 */
+  /* ======================= */
+
+  main div:nth-of-type(4) ul li a {
+    padding-left: 1em;
+  }
+
+  main div:nth-of-type(4) ul li {
+    width: 21vw;
+  }
+}
+
+/* ====================================================================================================== */
+/* EVEN BIGGER SCREEN BIGGER BUTTONS BABY */
+/* ====================================================================================================== */
+
+@media (min-width: 1500px) {
+  /* ======================= */
+  /* MAIN LINK UL SIZING CHANGES */
+  /* ======================= */
+
+  main div:nth-of-type(2) ul li a {
+    font-size: 1.75em;
+  }
+
+  /* ======================= */
+  /* OOK INTERESSANT */
+  /* ======================= */
+
+  main div:nth-of-type(4) ul {
+    padding-left: 10vw;
+  }
+}

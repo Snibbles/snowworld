@@ -1,0 +1,1027 @@
+/* ====================================================================================================== */
+/* GENERAL STYLING */
+/* ====================================================================================================== */
+
+/* ========================== */
+/* FONTS */
+/* ========================== */
+@font-face {
+    font-family: 'SuperMolot'; 
+    src: url('/fonts/Supermolot.otf') format('opentype'); 
+    font-weight: normal; 
+    font-style: normal; 
+  }
+  
+  @font-face {
+    font-family: 'SuperMolotBold'; 
+    src: url('/fonts/TT_Supermolot_Neue_Bold.otf') format('opentype'); 
+    font-weight: normal; 
+    font-style: normal; 
+  }
+  
+  @font-face {
+    font-family: 'Helvetica'; 
+    src: url('/fonts/helvetica.ttf') format('opentype'); 
+    font-weight: light; 
+    font-style: normal; 
+  }
+  
+  @font-face {
+    font-family: 'HelveticaNeueRoman'; 
+    src: url('/fonts/HelveticaNeueLTProRoman.otf') format('opentype'); 
+    font-weight: normal; 
+    font-style: normal; 
+  }
+  
+  @font-face {
+    font-family: 'HelveticaNeueBold'; 
+    src: url('/fonts/HelveticaNeueLTProBd.otf') format('opentype'); 
+    font-weight: bold; 
+    font-style: normal; 
+  }
+
+
+
+/* ======================= */
+/* Root Variables */
+/* ======================= */
+:root {
+    --secondary-color: #00485E;
+    --third-color: #00ABE9;
+    --button-color: #E63312;
+    --background-color: #f8f8f8;
+    --article-background: #E5EDEF;
+    --black: #000;
+    --white: #ffffff;
+    --shadow-color: rgba(0,0,0,.25);
+    --inactive-button: #d3d3d3;
+    --none: #00000000;
+
+    --shop-p-color: #282829;
+  }
+  
+  body, h1, nav, button, div, span, img {
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+
+
+
+/* ======================= */
+/* GLOBAL STYLES */
+/* ======================= */
+
+body {
+    color: var(--secondary-color);
+    font-family: Supermolot;  
+  }
+  
+  a {
+    text-decoration: none;
+    background: var(--button-color);
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 0.9em;
+    border-radius: 0.6em;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color .2s ease;
+  }
+  
+  a:hover {
+    background-color: var(--third-color);
+  }
+  
+  
+  p {
+    font-size: 0.9em;
+    font-family: helvetica;
+    color: var(--secondary-color);
+    margin: 0;
+    text-align: center;
+  }
+  
+  details summary {
+    list-style:none;
+  }
+  
+  /* GLOBAL DROP DOWN ARROW SETTINGS */ 
+  
+  header nav details summary svg:nth-of-type(2),
+  header > div:nth-of-type(2) > div:nth-of-type(1) > details > summary > svg,
+  header > div:nth-child(1) > details:first-of-type > summary > svg:nth-of-type(2), 
+  header > div:nth-child(1) > details:nth-of-type(2) > summary > svg,
+  header > div:nth-child(1) > details:nth-of-type(3) > summary > svg {
+  
+    justify-self: end;
+    margin-left: 0.3em;
+  
+    width: 2.2em;
+    height: auto;
+    fill: white;
+    stroke: #469AC6;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform: rotate(0deg);
+    transition: all 0.2s ease;
+  }
+  
+  header nav > details:nth-of-type(1)[open] summary > svg:nth-of-type(2),
+  header > div:nth-child(1) > details:nth-of-type(1)[open] summary > svg:nth-of-type(2),
+  header > div:nth-of-type(2) > details[open] summary svg {
+    transform: scaleY(-1);
+  }
+  
+  /* ======================= */
+  /* TOP HEADER STYLING */
+  /* ======================= */
+  
+  
+  header {
+    display: grid;
+    grid-template-rows: auto auto;
+    width: 100%;
+    height: auto;
+  }
+  
+  header > div:first-of-type {
+    height:3em;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    padding-top:0.8em;
+    padding-bottom:0.8em;
+  }
+  
+  header div:nth-child(1) a:nth-of-type(1) {
+    padding: 0;
+    background:none;
+    text-align:left;
+  }
+  header div:nth-child(1) > a:first-of-type h1 img {
+    margin-top:0.4em;
+    margin-left:0.75em;
+    height: 0.8em;
+    width: auto;
+  } 
+  
+  header div:nth-child(1) > a:nth-of-type(2) {
+    justify-self:end;
+    margin-right:2.1em;
+    margin-bottom:0.3em;
+    padding: 0.45em 2.2em;
+    font-size: 0.9em;
+    border-radius: 0.6em;
+    box-shadow: 0 4px 4px 0 var(--shadow-color);
+  }
+  
+  /* Bottom Section: Navigation */
+  
+  header nav {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items:center;
+  
+    padding: 1em;
+    padding-top:1.2em;
+    padding-bottom:1.2em;
+    background-color:var(--secondary-color);
+  }
+  
+  header nav > details:nth-of-type(1),
+  header > div:nth-child(1) > details:nth-of-type(1) {
+    justify-self: start;
+  }
+  
+  header nav details > summary:nth-of-type(1),
+  header > div:nth-child(1) > details:nth-of-type(1) > summary {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.25em;
+  
+    padding: 0.2em 0.85em 0.2em 0.85em;
+  
+    background-color: var(--white);
+    border: none;
+    border-radius: 0.6em;
+    cursor: pointer;
+  }
+  
+  header nav details > summary:nth-of-type(1),
+  header > div:nth-child(1) > details:nth-of-type(1) > summary {
+    justify-self: center;
+  
+    font-family: Helvetica;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--black);
+  }
+  
+  /*drop down contents */
+  
+  header nav > details:first-of-type div,
+  header > div:nth-child(1) > details:first-of-type div {
+    margin-top: 1em;
+    position: absolute;
+    height: 16em;
+    width: 18.5em;
+    z-index: 10;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.6em;
+    border-radius: 0.5em;
+  
+    padding: 1em;
+    background-color: var(--white);
+    color: var(--secondary-color);
+    font-family: Helvetica;
+    overflow-y: auto;
+    box-shadow: 0 4px 4px 0 var(--shadow-color);
+  }
+  
+  header nav > details:first-of-type div > a,
+  header > div:nth-child(1) > details:first-of-type div > a,
+  header > div:nth-of-type(2) > div:last-of-type details > div > a {
+    font-family: helveticaNeueRoman;
+    text-transform: none;
+    box-shadow: none;
+    background: none;
+    font-size: 1em;
+  
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0 0 0 1.25em;
+    font-weight: 1;
+    transition: color 0.1s ease;
+  }
+  
+  header nav > details:nth-of-type(1) div > a:hover,
+  header > div:nth-child(1) > details:nth-of-type(1) div > a:hover,
+  header > div:nth-of-type(2) > div:last-of-type details > div > a {
+    color: var(--third-color);
+  }
+  
+  header nav > details:first-of-type div > a:nth-of-type(1),
+  header > div:nth-child(1) > details:first-of-type div > a:nth-of-type(1),
+  header nav > details:first-of-type div > span,
+  header > div:nth-child(1) > details:first-of-type div > span {
+    font-family: helvetica;
+    font-size: 1.1em;
+    text-align: left;
+    font-weight: 700;
+    margin: 0;
+    padding: 0 1.25em 0 0;
+  }
+  
+  header nav > details:nth-of-type(1) div > a:nth-of-type(1):hover,
+  header > div:nth-child(1) > details:nth-of-type(1) div > a:nth-of-type(1):hover {
+    color: inherit;
+  }
+  
+  /* SVG's location */ 
+  
+  header nav details summary svg:nth-of-type(1),
+  header > div:nth-child(1) > details:first-of-type summary svg:nth-of-type(1) {
+    justify-self: start;
+  
+    margin-bottom: 0.1em;
+    margin-right: 0.15em;
+    fill: #E63312;
+    width: auto;
+    height: 1.5em;
+  }
+  
+  /* arrow settings are found in global settings */
+  
+  /* ======================= */
+  /* HAMBURGER MENU BUTTON */
+  /* ======================= */
+  
+  header nav > button {
+    justify-self: end; 
+    cursor: pointer;
+  
+    height: 2.5em;
+    width: 2.5em;
+    position:relative;
+    background:none;
+    border:none;
+  }
+  
+  header nav > button span {
+    height: 0.31em;
+    width: 2.25em;
+    background-color: var(--white);
+    position:absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+  }
+  
+  header nav > button span:nth-child(1) {
+    top: 25%;
+  }
+  
+  header nav > button span:nth-child(3) {
+    top: 75%;
+  }
+  
+  header nav > button.active span:nth-child(1) {
+    top: 62%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  header nav > button.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  header nav > button.active span:nth-child(3) {
+    top: 52%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+  }
+  
+  /* ======================= */
+  /* OFF SCREEN HAMBURGER DIV */
+  /* ======================= */
+  
+  header > div:nth-of-type(2) {
+    background-color:white;
+    height: 79vh;
+    width:100%;
+    position:fixed;
+    bottom:0;
+    transform: translateX(100%);
+    z-index:5;
+  
+    display: grid;
+    grid-template-rows: auto 1fr; 
+    gap: 1em;
+    align-items: start;
+    transition: .3s ease;
+    overflow-y:scroll;
+  }
+  
+  header > div:nth-of-type(2).active {
+    transform: translateX(0); 
+  }
+  
+  /* ======================= */
+  /* HAMBURGER DROP DOWNS */
+  /* ======================= */
+  
+  /* OPENING TIMES & LANGUAGE DROP DOWN DIV */
+  header > div:nth-of-type(2) > div:first-of-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: center; 
+    width: 100%;
+    margin-top:1em;
+  }
+  
+  /* OPENING TIMES BOX POSITIONING */
+  header > div:nth-of-type(2) > div:nth-of-type(1) > details:nth-of-type(1) {
+    justify-self: start;
+    margin-left: 1.5em;
+  }
+  
+  /* LANGUAGE BOX POSITIONING */
+  header > div:nth-of-type(2) > div:nth-of-type(1) > details:nth-of-type(2) {
+    justify-self: end;
+    margin-right: 1.5em;
+  }
+  
+  /* ======================= */
+  /* LANGUAGE & OPENING DROP DOWNS */
+  /* ======================= */
+  
+  /* [DESKTOP & MOBILE]
+  
+  /* OPENING & LANGUAGE INLINE ELEMENT POSITIONING */
+  header > div:nth-of-type(2) > div:nth-of-type(1) > details > summary,
+  header > div:nth-child(1) > details:nth-of-type(2) > summary,
+  header > div:nth-child(1) > details:nth-of-type(3) > summary {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* OPENING TIMES VERTICAL STACKED SPANS */
+  header > div:nth-of-type(2) > div:nth-of-type(1) > details > summary > div,
+  header > div:nth-child(1) > details:nth-of-type(2) > summary > div {
+    display: flex;
+    flex-direction: column; 
+  }
+  
+  /* LANGUAGE SVG SETTINGS */
+  header > div:nth-of-type(2) > div:nth-of-type(1) > details:nth-of-type(2) > summary > svg,
+  header > div:nth-child(1) > details:nth-of-type(3) > summary > svg {
+    width: 1.5em;
+    height: auto;
+  }
+  
+  /* DROP DOWN SMALLER SPANS */
+  header > div:nth-of-type(2) > div:nth-of-type(1) > details summary span,
+  header > div:nth-child(1) > details:nth-of-type(2) > summary span,
+  header > div:nth-child(1) > details:nth-of-type(3) > summary span {
+    font-size: 0.8em;
+    font-family: supermolotbold;
+    text-transform: uppercase;
+    font-weight: 1;
+  }
+  /* LANGUAGE POSITIONING */
+  header > div:nth-of-type(2) > details:nth-of-type(2) summary span,
+  header > div:nth-child(1) > details:nth-of-type(3) summary span {
+    margin-top: 0.4em;
+  }
+  
+  /* DROP DOWN BIGGER SPAN */
+  header > div:nth-of-type(2) > div:nth-of-type(1) > details summary:nth-of-type(1) > div > span:nth-of-type(2),
+  header > div:nth-child(1) > details:nth-of-type(2) > summary > div > span:nth-of-type(2) {
+    font-size:1em;
+  }
+  
+  
+  /* HAMBURGER BIG OL' LINKS */
+  
+  /* Grid container for the entire menu */
+  header > div:nth-of-type(2) > div:last-of-type {
+    display: grid;
+    grid-template-columns: 1fr; /* Single-column layout */
+    border-top: 0.05em solid var(--secondary-color);
+    width:100%;
+  }
+  
+  /* Shared styling for summary and a elements */
+  header > div:nth-of-type(2) > div:last-of-type details summary,
+  header > div:nth-of-type(2) > div:last-of-type a {
+    display: flex;
+    justify-content: space-between; /* Align h2 and SVG */
+    align-items: center;
+  
+    background:none;
+    border-radius:0;
+  
+    border-bottom: 0.05em solid var(--secondary-color); /* Border below each item */
+    cursor: pointer;
+    color: var(--secondary-color); /* Text color */
+    padding: 1em 0 1em 0;
+    font-size: 1.1em;
+  
+  }
+  
+  /* Styling for the h2 elements inside summary and a */
+  header > div:nth-of-type(2) > div:last-of-type h2 {
+    font-size: 1.1em;
+    font-family: supermolotbold;
+    font-weight: 1;
+    padding-left: 1em;
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--secondary-color); 
+  }
+  
+  /* SVG icons */
+  header > div:nth-of-type(2) > div:last-of-type details summary svg,
+  header > div:nth-of-type(2) > div:last-of-type a svg {
+    width: 0.75em;
+    height: 0.75em;
+    fill: var(--secondary-color);
+    stroke: none;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    margin-right: 1em;
+  }
+  
+  header > div:nth-of-type(2) > div:last-of-type a svg {
+    transform: rotate(-90deg);
+    transition:none;
+  }
+  
+  
+  /* Rotate SVG when details is open */
+  header > div:nth-of-type(2) > div:last-of-type details[open] > summary svg {
+    transform: rotate(180deg);
+  }
+  
+  /* ======================= */
+/* GENERAL ARROW STYLING */
+/* ======================= */
+main svg {
+    width: 1.7em; 
+    height: 1.7em; 
+    fill: none;
+    stroke: var(--third-color);
+    stroke-width: 1.8; 
+    transition: transform 0.3s ease; 
+    margin-left: 0.3em;
+  }
+  
+  /* Hover Effect */
+  main div:nth-of-type(2) ul li:hover svg {
+    transform: translate(0.3em, -0.2em); 
+  }
+  
+  
+  /* BIGGER DROP DOWNS HAMBURGER /*
+  
+  /* Container for the dropdown content */
+  header > div:nth-of-type(2) > div:last-of-type details > div {
+    display: grid;
+    grid-template-rows: auto auto; 
+    gap: 1em; 
+    padding: 1em; 
+    border-bottom: 0.05em solid var(--secondary-color);
+    text-align:left;
+    margin: 0 2em 0 1.3em;
+  }
+  
+  /* Spans as section dividers */
+  header > div:nth-of-type(2) > div:last-of-type details > div > span {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    padding-bottom: 0.5em; 
+    border-bottom: 0.05em solid var(--secondary-color); 
+  }
+  
+  /* Links under each section */
+  header > div:nth-of-type(2) > div:last-of-type details > div > a {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    padding: 0.25em 0; 
+    transition: color 0.3s ease;
+    border:none;
+  }
+  
+  /* Hover effect for links */
+  header > div:nth-of-type(2) > div:last-of-type details > div > a:hover {
+    color: var(--third-color); 
+  }
+
+
+/* ======================= */
+/* GENERAL FOOTER STYLES */
+/* ======================= */
+
+footer {
+    display: grid;
+    grid-template-rows: auto auto auto; 
+    gap: 1em;
+  }
+
+  h5 {
+    font-family: SuperMolotBold;
+    margin-left: 0.5em;
+    font-size: 2.25em;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 1;
+  }
+  
+  /* ======================= */
+  /* FIRST FOOTER SECTION */
+  /* ======================= */
+  
+  footer > div:nth-of-type(1) {
+    background-color: var(--secondary-color);
+    padding: 2em;
+    display: grid;
+    gap: 0.5em;
+    text-align: center;
+    margin-top: 3em;
+  }
+  
+  footer > div:nth-of-type(1) h5 {
+    margin: 0;
+    text-align: left;
+  }
+  
+  footer > div:nth-of-type(1) p {
+    text-align: left;
+    font-size: 1.25em;
+    margin: 0.4em 0 0.4em 0;
+    color: var(--white);
+  }
+  
+  footer > div:nth-of-type(1) form {
+    display: flex;
+    justify-content: center;
+    outline: 0.15em solid white;
+    border-radius: 0.25em;
+  }
+  
+  footer > div:nth-of-type(1) form input {
+    font-size: 1.1em;
+    padding-left: 1em;
+    width:100%;
+    flex: 1;
+    outline:none;
+    border-width: 0em;
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 0em;
+    border-top-left-radius: 0.18em;
+    border-bottom-left-radius: 0.18em;
+  }
+  
+  
+  footer > div:nth-of-type(1) form a {
+    padding: 0.65em 1.1em;
+    border-radius: 0em;
+    border-top-right-radius: 0.25em;
+    border-bottom-right-radius: 0.25em;
+    font-size: 1.15em;
+  }
+  
+  /* ======================= */
+  /* SECOND FOOTER DIV */
+  /* ======================= */
+  
+  /* Main container styling */
+  footer > div:nth-of-type(2) {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 1em;
+    padding: 1em;
+    background-color: var(--white);
+  }
+  
+  /* Styling for each details element */
+  footer > div:nth-of-type(2) details {
+    display: grid;
+    grid-template-columns: auto 1fr auto; 
+    align-items: center;
+    padding-bottom: 0.5em;
+  }
+  
+  /* Summary styling (summary acts as a row for 6** and SVG) */
+  footer > div:nth-of-type(2) details summary {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1em;
+    cursor: pointer;
+  }
+  
+  /* SVG alignment */
+  footer > div:nth-of-type(2) details summary > svg:nth-of-type(1) {
+    width: 1.75em;
+    height: 1.75em;
+    justify-self: end;
+    fill: var(--secondary-color);
+    transform: rotate(90deg); 
+    transition: transform 0.3s ease; 
+  }
+  
+  footer > div:nth-of-type(2) details[open] summary > svg:nth-of-type(1) {
+    transform: rotate(0deg); 
+  }
+  
+  /* Styling for address section */
+  footer > div:nth-of-type(2) > div {
+    display: grid;
+    gap: 0.5em;
+  }
+  
+  footer > div:nth-of-type(2) h6 {
+    font-family: SuperMolot;
+    font-size: 1.25em;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  footer > div:nth-of-type(2) p {
+    margin: 0;
+    line-height: 0.8em;
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    text-align: left;
+  }
+  
+  /* DROP DOWN CONTENT */
+  
+  details ul {
+    list-style: none;
+    margin: 0;
+    margin-top: 1em;
+    padding: 0;
+    display: grid;
+    gap: 1em;
+  }
+  
+  details ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  
+  details ul li svg {
+    width: 1.4em;
+    height: 1.4em;
+    fill: var(--secondary-color);
+    transition: color 0.3s ease;
+  }
+  
+  details ul li a {
+    font-family: HelveticaNeueRoman;
+    text-transform: none;
+    font-weight: 1;
+    color: var(--secondary-color);
+    padding: 0em;
+    background: none;
+    font-size: 1.2em;
+    margin-left: 0.5em;
+    transition: color 0.3s ease;
+  }
+  
+  
+  /* Hover on either the <svg> or <a> */
+  details ul li:hover svg,
+  details ul li:hover a {
+    color: var(--third-color);
+    fill: var(--third-color);
+    background: none;
+  }
+  
+  /* ======================= */
+  /* THIRD FOOTER SECTION */
+  /* ======================= */
+  
+  /* Main container styling */
+  footer > div:nth-of-type(3) {
+    background-color: var(--secondary-color);
+    display: grid;
+    grid-template-rows: auto auto; 
+    gap: 1em; 
+    padding: 2em 0 2em 0; 
+    justify-items: center; 
+  }
+  
+  /* Styling for the links section */
+  footer > div:nth-of-type(3) > div:nth-of-type(1) {
+    display: flex;
+    gap: 0.8em; 
+    margin: 0em 0.4em 0em 0.4em;
+  }
+  
+  footer > div:nth-of-type(3) div:nth-child(1) a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: none;
+    font-weight: 1;
+    font-size: 0.8em;
+    font-family: HelveticaNeueRoman;
+    transition: color 0.3s ease;
+    background: none;
+  }
+  
+  footer > div:nth-of-type(3) div:nth-child(1) a:hover {
+    opacity: 0.8;
+  }
+  
+  /* Styling for the social media icons */
+  footer > div:nth-of-type(3) > div:nth-of-type(2) {
+    display: flex;
+    gap: 1.5em;
+  }
+  
+  footer > div:nth-of-type(3) > div:nth-of-type(2) a {
+    background: none;
+  }
+  
+  footer > div:nth-of-type(3) > div:nth-of-type(2) a img {
+    width: 2.3em;
+    height: 2.3em;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  footer > div:nth-of-type(3) > div:nth-of-type(2) a:hover img {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  
+  .mobile-hidden {
+    display:none;
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-hidden {
+      display:grid;
+    }
+    .desktop-hidden {
+      display:none !important;
+      position:relative;
+    }
+
+/* DESKTOP TOP HEADER */
+
+
+header > div:first-child {
+    grid-template-columns: auto 1fr auto auto auto auto;
+    padding: 1.8em 0 1.8em 0;
+    gap: 1.75em;
+    align-items:center;
+  }
+  
+  
+  header div:nth-child(1) > a:first-of-type > h1 {
+    grid-column: 1;
+  }
+  
+  header div:nth-child(1) > a:first-of-type > h1 img {
+    height: 1em;
+    margin: 0.35em 0 0 0.4em;
+    grid-column: 1;
+    justify-self: start; 
+  }
+  
+  header > div:first-child > details:nth-of-type(1) {
+    grid-column: 2;
+    justify-self: start; 
+  }
+  
+  header > div:first-child > details:nth-of-type(1 )> summary {
+    outline: 0.05em solid var(--secondary-color);
+    padding: 0.25em 0.7em 0.25em 0.7em;
+    transition: none;
+  }
+  
+  header > div:first-child > details:nth-of-type(1 )> summary > svg:nth-of-type(2) {
+    margin-left:0.8em;
+  }
+  
+  header > div:first-child > details:nth-of-type(2) {
+    grid-column: 3;
+    justify-self: center; 
+    line-height: 0.95em;
+  }
+  
+  
+  header > div:first-child > a:nth-of-type(2) {
+    grid-column: 4;
+    justify-self: center; 
+    margin:0;
+    padding: 0.65em 1.8em;
+  }
+  
+  /* DIVIDER LINE */
+  header > div:first-child > span {
+    grid-column: 5;
+    height: 2.8em;
+    width: 0.01em;
+    border-left: 0.05em solid var(--secondary-color);
+  }
+  
+  /* LOCATION DROP DOWN */
+  header > div:first-child > details:nth-of-type(3) {
+    grid-column: 6;
+    justify-self: end; 
+    padding-right: 1em;
+  }
+  
+  
+  header > div:first-child > details:nth-of-type(3) > summary > span {
+    font-size:1em;
+    margin-top:0.4em;
+  }
+  
+  header > div:first-child > details:nth-of-type(3) > summary > svg {
+    height:2em;
+    width:auto;
+  }
+  
+  
+  
+  /* DESKTOP LOWER HEADER */
+  
+  
+  header > nav {
+    display:grid;
+    background-color: var(--secondary-color);
+    grid-template-columns: auto auto auto auto auto;
+    align-items: center;
+    padding: 0;
+    line-height:4em;
+    padding: 0 4em 0 4em;
+  }
+  
+  header > nav a {
+    height: 100%; 
+    padding-left: 0;
+    padding-right: 0;
+    font-weight: 1;
+    background:none;
+    border-radius: 0;
+    transition: background-color 0.2s ease;
+  }
+  
+  header > nav a:hover {
+    background-color: var(--white);
+  }
+  
+  header > nav a:hover h2 {
+    color: var(--secondary-color);
+  }
+  
+  h2 {
+    margin: 0;
+    font-family: supermolot;
+    color:var(--white);
+    font-size: 1.2em;
+    font-weight: 1;
+    transition: color 0.2s ease;
+  }
+
+  footer > div:nth-of-type(2) h6 {
+    font-size: 1.9em;
+  }
+
+  footer > div:nth-of-type(1) p {
+    font-size: 1.3em;
+  }
+
+  footer details ul li a {
+    font-size: 1.4em;
+  }
+
+  footer > div:nth-of-type(2) p {
+    font-size: 1.5em;
+  }
+
+  footer > div:nth-of-type(3) > div:nth-of-type(1) {
+    gap: 3em;
+  }
+  footer > div:nth-of-type(3) div:nth-child(1) a {
+    font-size: 1.25em;
+  }
+}
+/*---------------------------------------------------------------------------------*/
+/* EVEN BIGGER SCREEN BIGGER BUTTONS BABY */
+
+@media (min-width: 1500px) {
+
+
+    header > div:first-child {
+      padding: 0.8em 5vw 2.4em 5vw;
+      gap: 1.75em;
+    }
+  
+   /* LOGO CHANGES */ 
+    header div:nth-child(1) > a:first-of-type > h1 > img {
+      height: 1.75em;
+      width:auto;
+    }
+  
+    /* LOCATION DROP DOWN STYLE AND PADDING CHANGES */
+  
+    header > div:first-child > details:nth-of-type(1) > summary {
+      padding: 0.2em 1em 0.2em 1.1em;
+      font-size: 1.1em;
+      font-weight: 700;
+    }
+    
+    header > div:first-child > details:nth-of-type(1) > summary > svg:nth-of-type(2) {
+      height: 1.8em;
+      width: auto;
+    }
+  
+    header > div:first-child > details:nth-of-type(1) > summary > svg:nth-of-type(2) {
+      margin-left: 1.5em;
+    }
+  
+    /* OPENING TIME DROP DOWN MINOR SIZE CHANGES */
+  
+    header > div:first-child > details:nth-of-type(2) > summary > div > span:nth-of-type(1) {
+      font-size: 0.75em;
+    }
+  
+    header > div:first-child > details:nth-of-type(2) > summary > div > span:nth-of-type(2) {
+      font-size: 1.12em;
+    }
+    
+    
+    header > div:first-child > a:nth-of-type(2) {
+      grid-column: 4;
+      justify-self: center; 
+      margin:0;
+      padding: 0.6em 2em; 
+      font-size: 1.25em;
+    }
+  
+    /* LOWER HEADER */
+  
+  
+  header > nav {
+    padding: 0 10em 0 10em;
+    transition: padding 0.4s ease;
+  }
+
+}
