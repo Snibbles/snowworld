@@ -6,7 +6,12 @@ Nb. De standaardstructuur en de spartaanse opmaak van de README.md zijn helemaal
 
 Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard open zetten. Fijn om dat steeds voor de relevante stuk(ken) te doen.
 
+HERKANSING:
 
+* Drop downs are not working properly (its just because the whole thing is one big grid column its an easy fix)
+EXTRAS
+* Could potentially make the top drop downs functional as an extra thing
+* Also could work on adding cool animations 
 
 
 
